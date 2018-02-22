@@ -1,0 +1,30 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ tutorials.title}}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item"><a href="{% url 'temp' %}">Article</a></li>
+        <li class="breadcrumb-item active">{{ tutorials.title }}</li> <br>
+      </ol>
+    </div>
+
+    <div style="padding:40px;margin:40px;border:1px solid #ccc ; background-color:White">
+      <li>Views {{tutorials.views}}</li>
+        {% for articles in tutorials.r_title.all %}
+        <h3>Title :<strong>{{articles.title}} </strong> : {{ articles.subject_other}} : {{articles.starter.written_by}}</h3>
+
+          <img src="{{ articles.document_other.url }}"  style="height:100px;width:500px;"/>
+          <h3>Title :<strong>{{articles.updated_at}} </strong> : </h3>
+    <p>{{articles.description}}</p>
+  <hr>
+      </p>
+  {% endfor %}
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,85 @@
+
+/* Padding body to implement fixed nav bar */
+.navbar-brand
+{
+  height: 55px;
+  width: 100px;
+}
+
+  .masthead {
+    text-align: center;
+    background-color: transparent;
+    margin-bottom: 10px;
+      font-weight: 600;
+}
+
+.masthead a:hover{
+  text-decoration: none;;
+}
+
+.content-post {
+  text-align: center;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    color: #999;
+}
+
+ul {
+    list-style: circle inside;
+}
+.content-post li {
+    list-style: none;
+    display: inline;
+    margin-right: 1rem;
+}
+
+.logo
+{
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    font-family:  "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+     /* Set gray background color and 100% height */
+.leftsidenav {
+      padding-top: 20px;
+      height: auto;
+      background-color: #fff;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      min-width: 24%;
+      box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.05);
+      line-height: 1.2em;
+      font-size: 1.2em;
+}
+
+.middlebar
+{
+
+   line-height: 1.4em;
+   font-size: 1.2em;
+   font-family:  "Open Sans","Gill Sans MT","Gill Sans" ,Arial,sans-serif;
+   padding-top: 20px;
+   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.05);
+   background-color: #fff;
+   margin-right: 10px;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   font-family: Verdana,sans-serif;
+   max-width: 100%;
+   min-width: 70%;
+   height: auto;
+}
+
+.containerr{
+  background-color: #fff;
+}
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+      .sidenav {
+       height: auto;
+       padding: 15px;
+      .row.content {height:auto;}
+}
