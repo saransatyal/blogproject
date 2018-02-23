@@ -6,14 +6,14 @@
     <p class="post-title">
   <a>ABOUT BLOGGER</a>
 </p>
-  {% for author_infos in author_info %}
+  {% for author_info in author_info %}
     <div class="post-thumb">
-    <img class="img-responsive" src="{{ author_infos.document.url }}" />
+    <img class="img-responsive" src="{{ author_info.document.url }}" />
   </div>
     <div>
       <br>
-      <p>{{author_infos.strong}}</p>  <hr>
-      <p>{{author_infos.long_description}}</p>
+      <p>{{author_info.strong}}</p>  <hr>
+      <p>{{author_info.get_description_as_markdown}}</p>
 </div>
 <hr>
 {% endfor %}

@@ -30,7 +30,7 @@
   		<div class="collapse navbar-collapse" id="navbar">
   			<ul class="nav navbar-nav navbar-left">
   				<li class="dropdown">
-  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i>Web Tools </span></a>
+  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-home"></i>HOME</span></a>
   					<ul class="dropdown-menu" role="menu">
   						<li><a href="#">HTML</a></li>
   						<li><a href="#">CSS</a></li>
@@ -38,11 +38,11 @@
   						<li><a href="#">Javascript</a></li>
   					</ul>
   				</li>
-  				<li class="active"><a href="#">Sublime<span class="sr-only">(current)</span></a></li>
-           <li><a href="{% url 'base' %}">Base</a></li>
-           <li><a href="{% url 'author_info' %}">About</a></li>
+  				<li class="active"><a href="#">GITHUB<span class="sr-only">(current)</span></a></li>
+           <li><a href="{% url 'base' %}">MYTHOUGHTS</a></li>
+           <li><a href="{% url 'author_info' %}">ABOUT</a></li>
           <li class="dropdown">
-  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dynamic <span class="caret"></span></a>
+  					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DYNAMIC <span class="caret"></span></a>
   					<ul class="dropdown-menu" role="menu">
   						<li><a href="#">PHP</a></li>
   						<li><a href="#">SQL</a></li>
@@ -52,8 +52,9 @@
   				</li>
   			</ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> SIGNUP</a></li>
+
+          <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> SIGNUP</a></li> -->
         </ul>
   		</div>
   	</div>
@@ -107,5 +108,6 @@
 </div>
 </div>
 {% endblock body %}
+{% block javascript %}{% endblock %}
 </body>
 </html>

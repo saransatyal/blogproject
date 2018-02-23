@@ -1,18 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.utils.html import mark_safe
+from markdown import markdown
 
 # tutorial models
 
 class Article(models.Model):
-     title = models.CharField(max_length=50 , unique = True)
-     subject = models.CharField(max_length=100)
-     document = models.FileField(null=True,upload_to='documents/')
-     user = models.ForeignKey(User , on_delete = models.CASCADE , related_name='articles')
-     created_at = models.DateTimeField(auto_now_add=True)
-     views = models.PositiveIntegerField(default=0)
+    title = models.CharField(max_length=50 , unique = True)
+    subject = models.CharField(max_length=100)
+    document = models.FileField(null=True,upload_to='documents/')
+    user = models.ForeignKey(User , on_delete = models.CASCADE , related_name='articles')
+    created_at = models.DateTimeField(auto_now_add=True)
+    views = models.PositiveIntegerField(default=0)
 
-     def __str__(self):
+    def __str__(self):
         return self.title
 
 class Readarticle(models.Model):
@@ -34,13 +36,17 @@ class Readarticle(models.Model):
     @property
     def view_other(self):
         return self.title.views
+    def get_description_as_markdown(self):
+        return mark_safe(markdown(self.description, safe_mode='escape'))
 
 class Author(models.Model):
-        blogger = models.ForeignKey(User ,null = True, on_delete = models.CASCADE , related_name='authors')
-        strong = models.CharField(max_length=40)
-        document = models.FileField(null=True,upload_to='documents/')
-        about_author = models.TextField(max_length=4000 , null=True)
-        long_description = models.TextField(max_length=10000 , null=True)
+    blogger = models.ForeignKey(User ,null = True, on_delete = models.CASCADE , related_name='authors')
+    strong = models.CharField(max_length=40)
+    document = models.FileField(null=True,upload_to='documents/')
+    about_author = models.TextField(max_length=4000 , null=True)
+    description = models.TextField(null=True)
+    def get_description_as_markdown(self):
+        return mark_safe(markdown(self.description, safe_mode='esscape'))
 
 class Commentblog(models.Model):
     message = models.TextField(max_length=4000)

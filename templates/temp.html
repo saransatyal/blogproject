@@ -50,7 +50,7 @@
       <h3>Title :<strong>{{article.title}} </strong> : {{ article.subject_other}}</h3>
         <img src="{{ article.document_other.url }}"/>
         <h3>Title :<strong>{{article.updated_at}} </strong> : </h3>
-  <p>{{article.description}}</p>
+  <p>{{article.get_description_as_markdown}}</p>
 <hr>
     </p>
 {% endfor %}

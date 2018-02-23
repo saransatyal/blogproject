@@ -16,8 +16,9 @@
         <!-- {% for authorinfo in author_info %}
       <p> {{authorinfo.about_author}} , {{authorinfo.blogger}}</p>
       {% endfor %} -->
-
+<h4>TOPICS</h4><hr>
   {% for tutorial in tutorials %}
+
   <div class="post-title">
      <a href="{% url 'readarticle' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
   </div>
@@ -29,9 +30,9 @@
               <i class="fa fa-user" href="" rel="author" ></i> {{tutorial.user}}
               </a>
             </li>
-            <li>
+            <!-- <li>
               <i class="fa fa-clock-o">  4 minutes read</i>
-            </li>
+            </li> -->
             <li>
               <i class="fa fa-eye"></i>
               <span class=" "> {{tutorial.views}}</span> views

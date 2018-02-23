@@ -12,7 +12,8 @@
 
  {% block content %}
  <br>
-      <div class="col-sm-8  middlebar">
+       <div class="col-sm-8  middlebar">
+         <h4>TOPIC</h4><hr>
  {% for articles in tutorials.r_title.all %}
   <div class="post-title">
      <a>{{articles.title}} : {{ articles.subject_other}}</a>
@@ -25,9 +26,9 @@
               <i class="fa fa-user" href="" rel="author" ></i> {{articles.written_by}}
               </a>
             </li>
-            <li>
+            <!-- <li>
               <i class="fa fa-clock-o">  4 minutes read</i>
-            </li>
+            </li> -->
             <li>
               <i class="fa fa-eye"></i>
               <span class=" "> {{articles.view_other}}</span> views
@@ -36,7 +37,7 @@
 
       <img class="img-responsive" style="margin: 0 auto;" src="{{ articles.document_other.url }}" />
 <br>
-      <p>{{ articles.description}} </p>
+      <p>{{ articles.get_description_as_markdown}} </p>
 
        <hr>
         <div>
@@ -51,7 +52,7 @@
     </div>
 
     <div class="col-sm-2 leftsidenav text-center">
-<p class="post-title">
+<p class="author-title">
   <a href="{% url 'author_info' %}">ABOUT BLOGGER</a>
 </p>
   {% for author_info in author_info %}
