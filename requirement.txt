@@ -1,0 +1,7 @@
+dj-database-url==0.4.2
+Django==2.0.2
+django-multiurl==1.1.0
+django-widget-tweaks==1.4.1
+Markdown==2.6.11
+Pillow==5.0.0
+python-decouple==3.1
