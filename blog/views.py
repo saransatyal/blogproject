@@ -10,28 +10,19 @@ from django.db.models import Count
 # hello world model
 def base(request):
     return render(request,'base.html')
-def temp(request):
+def author_info(request):
     author_info = Author.objects.all()
-    tutorials = Article.objects.all().order_by('-created_at')
-    read_article = Readarticle.objects.all().order_by('-updated_at')
- 
-    return render(request, 'temp.html',{'author_info':author_info , 'tutorials':tutorials, 'read_article':read_article})
+    return render(request, 'author_info.html',{'author_info':author_info})
 
 def readarticle(request, pk):
+    author_info = Author.objects.all()
     tutorials = get_object_or_404(Article, pk=pk)
     tutorials.views += 1
     tutorials.save()
-    return render(request, 'readarticle.html',{'tutorials':tutorials} )
+    return render(request, 'readarticle.html',{'tutorials':tutorials ,'author_info':author_info} )
 
-
-def home1(request):
-    try:
-        tutorials = Article.objects.all()
-    except Board.DoesNotExist:
-        raise Http404
-    return render(request, 'home1.html',{'tutorials':tutorials})
-
-def simple_upload(request):
-
-        author_info = Author.objects.all()
-        return render(request, 'home1.html',{'author_info':author_info})
+def home(request):
+    author_info = Author.objects.all()
+    tutorials = Article.objects.all().order_by('-created_at')
+    read_article = Readarticle.objects.all().order_by('-updated_at')
+    return render(request, 'home.html',{'author_info':author_info , 'tutorials':tutorials, 'read_article':read_article})

@@ -40,6 +40,7 @@ class Author(models.Model):
         strong = models.CharField(max_length=40)
         document = models.FileField(null=True,upload_to='documents/')
         about_author = models.TextField(max_length=4000 , null=True)
+        long_description = models.TextField(max_length=10000 , null=True)
 
 class Commentblog(models.Model):
     message = models.TextField(max_length=4000)

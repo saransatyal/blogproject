@@ -10,8 +10,8 @@
   <body style="background-color:#f1f1f1">
   <h1>My Models</h1>
    <a href="{% url 'base' %}">Base</a>
-   <a href="{% url 'home1' %}">Home</a>
-   <a href="{% url 'simple_upload' %}">simple_upload</a>
+   <a href="{% url 'home' %}">Home</a>
+   <a href="{% url 'author_info' %}">author_info</a>
    <div class="collapse navbar-collapse" id="mainMenu">
        <ul class="navbar-nav ml-auto">
          <li class="nav-item">
@@ -24,6 +24,7 @@
       <h1>Author</h1>
       {% for author_info in author_info %}
     <img src="{{ author_info.document.url }}" style="height:100px;width:100px;"/>
+	<a href="{% url 'author_info' %}">{{ author_info.blogger}}</a>
     <h3> {{author_info.blogger}}</h3>
     <p>{{author_info.strong}}</p>  <hr>
     <p>{{author_info.about_author}}</p>
@@ -54,7 +55,7 @@
     </p>
 {% endfor %}
 </div>
-<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
   </body>

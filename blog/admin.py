@@ -23,7 +23,7 @@ class Admin_Readarticle(admin.ModelAdmin):
         obj.user = request.user
         obj.save()
 
-# Register the admin class with the associated model
+# Register admin class with the associated model
 class Admin_Author(admin.ModelAdmin):
     list_display = ('blogger', 'strong','about_author', 'document')
     def save_model(self, request, obj, form, change):

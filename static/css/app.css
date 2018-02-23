@@ -1,36 +1,42 @@
 
-/* Padding body to implement fixed nav bar */
+
+.mbody
+{
+background-color: #f1f1f1;
+}
+
 .navbar-brand
 {
   height: 55px;
   width: 100px;
 }
 
-  .masthead {
-    text-align: center;
-    background-color: transparent;
-    margin-bottom: 10px;
-      font-weight: 600;
+/* nav bar */
+nav.navbar-webmaster { background: #1b242c; text-align: center;font-family: 'Corben', Georgia, Times, serif;
+font-size: 14px;
 }
+nav.navbar-webmaster a { color: #fff; }
+nav.navbar-webmaster ul.navbar-nav a:hover,
+nav.navbar-webmaster ul.navbar-nav a:visited,
+nav.navbar-webmaster ul.navbar-nav a:focus,
+nav.navbar-webmaster ul.navbar-nav a:active { background:#3b4045; }
+nav.navbar-webmaster button.navbar-toggle:hover { background: #999; }
+nav.navbar-webmaster button.navbar-toggle > span.icon-bar { background: #fff; }
+@media (max-width: 767px) {.dropdown-menu {text-align: center;}}
+nav.navbar-webmaster ul.dropdown-menu > li > a { background: #1b242c; color: #fff; }
+nav.navbar-webmaster ul.dropdown-menu > li > a { background: #1b242c; color: #fff; }
+nav.navbar-webmaster ul.dropdown-menu > li > a:hover {color: #fff;background-color: #999}
 
-.masthead a:hover{
-  text-decoration: none;;
-}
+/* after navbar : masthed*/
 
-.content-post {
+.masthead {
   text-align: center;
-    margin: 2rem 0;
-    font-size: 1.4rem;
-    color: #999;
+  background-color: transparent;
+  margin-bottom: 10px;
+    font-weight: 600;
 }
-
-ul {
-    list-style: circle inside;
-}
-.content-post li {
-    list-style: none;
-    display: inline;
-    margin-right: 1rem;
+.masthead a:hover{
+text-decoration: none;;
 }
 
 .logo
@@ -40,8 +46,139 @@ ul {
     font-weight: 600;
     font-family:  "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-     /* Set gray background color and 100% height */
+
+.middlebar
+{
+
+   line-height: 1.4em;
+   font-size: 1.2em;
+   padding-top: 20px;
+   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.05);
+   background-color: #fff;
+   margin-right: 10px;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   max-width: 100%;
+   min-width: 70%;
+   height: auto;
+}
+.post-title
+{
+  text-align: center;
+}
+.post-title a{
+  margin-bottom: .5rem;
+  font-weight: 500;
+  color: Black;
+  font-family: Verdana,sans-serif;
+  font-size: 3.0rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem;
+}
+
+.author-title
+{
+  text-align: center;
+}
+.author-title a{
+  margin-bottom: .5rem;
+  color: Black;
+  font-family: Verdana,sans-serif;
+  font-size: 2.0rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem;
+}
+/* author profile */
+.post-thumb img {
+  display: block
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin: 0 auto;
+}
+
+.post-title a:hover
+{
+color: #23527c;
+text-decoration: none;
+}
+.content-post {
+  text-align: center;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    color: #999;
+}
+.content-post li {
+    list-style: none;
+    display: inline;
+    margin-right: 1rem;
+}
+
+
+.detailBox {
+  width:100%;
+  border:1px solid #bbb;
+}
+.titleBox {
+  background-color:#23527c;
+  padding:10px;
+}
+.titleBox label{
+color:White;
+margin:0;
+display:inline-block;
+}
+
+.commentBox {
+  padding:10px;
+  border-top:1px dotted #bbb;
+}
+.commentBox .form-group:first-child, .actionBox .form-group:first-child {
+  width:80%;
+}
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+  width:18%;
+}
+.actionBox .form-group * {
+  width:100%;
+}
+.taskDescription {
+  margin-top:10px 0;
+}
+.commentList {
+  padding:0;
+  list-style:none;
+  max-height:200px;
+  overflow:auto;
+}
+.commentList li {
+  margin:0;
+  margin-top:10px;
+}
+.commentList li > div {
+  display:table-cell;
+}
+.commenterImage {
+  width:30px;
+  height:100%;
+}
+.commenterImage img {
+  width:100%;
+  border-radius:50%;
+}
+.commentText p {
+  margin:0;
+  padding:10px;
+}
+.sub-text {
+  color:#aaa;
+  font-family:verdana;
+  font-size:11px;
+}
+.actionBox {
+  border-top:1px dotted #bbb;
+  padding:10px;
+}
 .leftsidenav {
       padding-top: 20px;
       height: auto;
@@ -55,31 +192,64 @@ ul {
       font-size: 1.2em;
 }
 
-.middlebar
-{
+/*
+footer*/
 
-   line-height: 1.4em;
-   font-size: 1.2em;
-   font-family:  "Open Sans","Gill Sans MT","Gill Sans" ,Arial,sans-serif;
-   padding-top: 20px;
-   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.05);
-   background-color: #fff;
-   margin-right: 10px;
-   margin-left: 10px;
-   margin-bottom: 10px;
-   font-family: Verdana,sans-serif;
-   max-width: 100%;
-   min-width: 70%;
-   height: auto;
+.footer-bottom {
+ background-color: #1b242c;
+ min-height: 30px;
+ width: 100%;
+   padding: 15px 0;
+     position: relative;
 }
-
-.containerr{
-  background-color: #fff;
+.push {
+height: 100px;
 }
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-      .sidenav {
-       height: auto;
-       padding: 15px;
-      .row.content {height:auto;}
+.copyright {
+ color: #fff;
+ line-height: 30px;
+ min-height: 30px;
+ padding: 7px 0;
+}
+.design {
+ color: #fff;
+ line-height: 30px;
+ min-height: 30px;
+ padding: 7px 0;
+ text-align: right;
+}
+.design a {
+ color: #fff;
+}
+/*
+ Social
+*/
+.social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+/*
+ Multicoloured Hover Variations
+*/
+#social-fb:hover {
+  color: #3B5998;
+}
+#social-tw:hover {
+  color: #4099FF;
+}
+#social-gp:hover {
+  color: #d34836;
+}
+#social-em:hover {
+  color: #f39c12;
 }

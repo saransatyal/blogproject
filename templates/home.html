@@ -13,16 +13,20 @@
  {% block content %}
  <br>
       <div class="col-sm-8  middlebar">
- {% for articles in tutorials.r_title.all %}
+        <!-- {% for authorinfo in author_info %}
+      <p> {{authorinfo.about_author}} , {{authorinfo.blogger}}</p>
+      {% endfor %} -->
+
+  {% for tutorial in tutorials %}
   <div class="post-title">
-     <a>{{articles.title}} : {{ articles.subject_other}}</a>
+     <a href="{% url 'readarticle' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
   </div>
         <ul class="content-post">
             <li>
-              <i class="fa fa-calendar"></i>{{articles.updated_at|date:"M d, Y"}}
+              <i class="fa fa-calendar"></i>{{tutorial.created_at|date:"M d, Y"}}
             </li>
             <li>
-              <i class="fa fa-user" href="" rel="author" ></i> {{articles.written_by}}
+              <i class="fa fa-user" href="" rel="author" ></i> {{tutorial.user}}
               </a>
             </li>
             <li>
@@ -30,14 +34,14 @@
             </li>
             <li>
               <i class="fa fa-eye"></i>
-              <span class=" "> {{articles.view_other}}</span> views
+              <span class=" "> {{tutorial.views}}</span> views
             </li>
+
           </ul>
 
-      <img class="img-responsive" style="margin: 0 auto;" src="{{ articles.document_other.url }}" />
+      <img class="img-responsive" style="margin: 0 auto;" src="{{ tutorial.document.url }}" />
 <br>
-      <p>{{ articles.description}} </p>
-
+       <a href="{% url 'readarticle' tutorial.pk %}"  >Read more..</a>
        <hr>
         <div>
                     <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
@@ -51,9 +55,22 @@
     </div>
 
     <div class="col-sm-2 leftsidenav text-center">
-<p class="post-title">
+
+
+  <div>
+              <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+              <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+              <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+              <a href=" "><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+
+  </div>
+  <hr>
+  </div>
+
+    <div class="col-sm-2 leftsidenav text-center">
+<div class="author-title">
   <a href="{% url 'author_info' %}">ABOUT BLOGGER</a>
-</p>
+</div>
   {% for author_info in author_info %}
     <div class="post-thumb">
     <img class="img-responsive" src="{{ author_info.document.url }}" />

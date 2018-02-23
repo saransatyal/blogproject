@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <div class="col-sm-8  middlebar">
+    <p class="post-title">
+  <a>ABOUT BLOGGER</a>
+</p>
+  {% for author_infos in author_info %}
+    <div class="post-thumb">
+    <img class="img-responsive" src="{{ author_infos.document.url }}" />
+  </div>
+    <div>
+      <br>
+      <p>{{author_infos.strong}}</p>  <hr>
+      <p>{{author_infos.long_description}}</p>
+</div>
+<hr>
+{% endfor %}
+
+<br>
+</div>
+{% endblock %}
