@@ -9,6 +9,7 @@ from markdown import markdown
 class Article(models.Model):
     title = models.CharField(max_length=50 , unique = True)
     subject = models.CharField(max_length=100)
+    shortdesc = models.CharField(null=True , max_length=1000)
     document = models.FileField(null=True,upload_to='documents/')
     user = models.ForeignKey(User , on_delete = models.CASCADE , related_name='articles')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -55,3 +56,13 @@ class Commentblog(models.Model):
     updated_at = models.DateTimeField(null=True)
     commented_by = models.ForeignKey(User , on_delete = models.CASCADE , related_name='commented_by')
     updated_by = models.ForeignKey(User ,   on_delete = models.CASCADE , related_name='updated_by')
+
+class Mythought(models.Model):
+    blogger = models.ForeignKey(User , on_delete = models.CASCADE , related_name='blogger')
+    header = models.CharField(max_length=100)
+    image = models.FileField(upload_to='documents/')
+    description = models.TextField(max_length=4000)
+    thought_on =   models.DateTimeField()
+
+    def get_description_as_markdown(self):
+        return mark_safe(markdown(self.description, safe_mode='essscape'))

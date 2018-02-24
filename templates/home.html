@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
-{% block masthead %}
+ {% block content %}
+  <div class="container-fluid masthead">
 <h1>
   <a href="/" class="logo">
     Code Smart
@@ -8,17 +8,12 @@
 </h1>
 <h5>Let us learn Web Development together!</h5>
 <img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" />
- {% endblock %}
-
- {% block content %}
+</div>
  <br>
-      <div class="col-sm-8  middlebar">
-        <!-- {% for authorinfo in author_info %}
-      <p> {{authorinfo.about_author}} , {{authorinfo.blogger}}</p>
-      {% endfor %} -->
+      <div class="col-sm-9" style="width=100%">
+        {% for tutorial in tutorials %}
+        <div class ="middlebar text-center">
 <h4>TOPICS</h4><hr>
-  {% for tutorial in tutorials %}
-
   <div class="post-title">
      <a href="{% url 'readarticle' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
   </div>
@@ -37,12 +32,14 @@
               <i class="fa fa-eye"></i>
               <span class=" "> {{tutorial.views}}</span> views
             </li>
-
           </ul>
-
       <img class="img-responsive" style="margin: 0 auto;" src="{{ tutorial.document.url }}" />
 <br>
-       <a href="{% url 'readarticle' tutorial.pk %}"  >Read more..</a>
+<div>
+   <p>{{ tutorial.shortdesc }}</p>
+</div>
+
+       <div class="read-title"><a href="{% url 'readarticle' tutorial.pk %}"  >READ MORE..</a></div>
        <hr>
         <div>
                     <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
@@ -51,13 +48,10 @@
                     <a href=" "><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
         </div>
       <hr>
-  {% endfor %}
-  <br>
+
+    </div> {% endfor %}
     </div>
-
-    <div class="col-sm-2 leftsidenav text-center">
-
-
+    <!-- <div class="col-sm-2 leftsidenav text-center">
   <div>
               <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
               <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
@@ -66,9 +60,10 @@
 
   </div>
   <hr>
-  </div>
+  </div> -->
 
-    <div class="col-sm-2 leftsidenav text-center">
+    <div class="col-sm-3">
+      <div class="leftsidenav text-center">
 <div class="author-title">
   <a href="{% url 'author_info' %}">ABOUT BLOGGER</a>
 </div>
@@ -82,7 +77,8 @@
       <p>{{author_info.strong}}</p>  <hr>
       <p>{{author_info.about_author}}</p>
 </div>
- <li><a href="{% url 'author_info' %}">Read more..</a></li>
+
+ <div class="read-title"><a href="{% url 'author_info' %}">READ MORE..</a></div>
 <hr>
 
   <div>
@@ -95,5 +91,6 @@
 {% endfor %}
 
 <br>
+</div>
 </div>
 {% endblock %}

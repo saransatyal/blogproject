@@ -1,6 +1,6 @@
 from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponse , Http404
-from .models import Article , Author , Readarticle
+from .models import Article , Author , Readarticle , Mythought
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
@@ -26,3 +26,7 @@ def home(request):
     tutorials = Article.objects.all().order_by('-created_at')
     read_article = Readarticle.objects.all().order_by('-updated_at')
     return render(request, 'home.html',{'author_info':author_info , 'tutorials':tutorials, 'read_article':read_article})
+
+def mythoughts(request):
+    mythoughts = Mythought.objects.all()
+    return render(request, 'mythoughts.html',{'mythoughts':mythoughts})

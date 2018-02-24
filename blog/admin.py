@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Article , Readarticle, Commentblog , Author
+from blog.models import Article , Readarticle, Commentblog , Author , Mythought
 from django.utils.html import mark_safe
 from markdown import markdown
 
@@ -41,8 +41,14 @@ class Admin_Commentblog(admin.ModelAdmin):
         obj.user = request.user
         obj.save()
 
+class Admin_Mythought(admin.ModelAdmin):
+    list_display = ('header','image')
+    def save_model(self, request, obj, form, change):
+        obj.user = request.user
+        obj.save()
 # Register the admin class with the associated model
 admin.site.register(Article, Admin_Article)
 admin.site.register(Commentblog , Admin_Commentblog)
 admin.site.register(Author , Admin_Author)
 admin.site.register(Readarticle , Admin_Readarticle)
+admin.site.register(Mythought , Admin_Mythought)

@@ -12,11 +12,14 @@ from accounts import views as accounts_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
     url(r'^$', views.home , name='home'),
+    url(r'^mythoughts/$', views.mythoughts , name = "mythoughts"),
     url(r'^readarticle/(?P<pk>\d+)/$', views.readarticle, name='readarticle'),
     url(r'^base/$', views.base , name='base'),
     url(r'^author_info/$', uploader_view.author_info , name='author_info'),
     url(r'^signup/$', accounts_views.signup , name = "signup" )
+
     ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
