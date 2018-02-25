@@ -12,8 +12,8 @@
   </div>
     <div>
       <br>
-      <p>{{author_info.strong}}</p>  <hr>
-      <p>{{author_info.get_description_as_markdown}}</p>
+     <p>Title: {{author_info.strong}}</p>  <hr>
+      <p>{{author_info.get_descriptions_as_markdown}}</p>
 </div>
 <hr>
 {% endfor %}
@@ -21,17 +21,16 @@
 <br>
 </div>
 
-<div class="col-sm-4 leftsidenav text-center">
+<div class="col-sm-4 sidenav text-center">
 <div class="author-title">
 <a>CONTACT ME</a>
 </div>
 <div>
-    <form method="post" novalidate>
       <br>
-       <button type="submit" class="btn btn-primary">Submit</button>
-      <br>
-     </form>
-   </div>
+      <div class="read-title glyphicon glyphicon-arrow-right">
+        <a >saransatyal@gmail.com</a>
+      </div>
+
 <hr>
 <div>
           <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
@@ -40,7 +39,9 @@
           <a href=" "><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
 
 </div>
-<br>
+<hr>
+</div>
+
 </div>
 
 {% endblock %}

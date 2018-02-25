@@ -18,7 +18,8 @@ urlpatterns = [
     url(r'^readarticle/(?P<pk>\d+)/$', views.readarticle, name='readarticle'),
     url(r'^base/$', views.base , name='base'),
     url(r'^author_info/$', uploader_view.author_info , name='author_info'),
-    url(r'^signup/$', accounts_views.signup , name = "signup" )
+    url(r'^signup/$', accounts_views.signup , name = "signup" ),
+    url(r'^archive/$', views.archive , name = "archive" )
 
     ]
 if settings.DEBUG:

@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
  {% block content %}
   <div class="container-fluid masthead">
-<h1>
-  <a href="/" class="logo">
-    Code Smart
-  </a>
-</h1>
-<h5>Let us learn Web Development together!</h5>
+    <h1>
+    <a href="/" class="logo">
+      Code Smart
+    </a>
+  </h1>
+  <h5>Let us learn Web Development together!</h5>
+  <!--  <div class="ads">
+
+   <h1>
+    <marquee behavior="scroll" direction="left">
+      THIS WILL BE ADVERTISEMENT SECTION </marquee>
+  </h1>
+  </div>-->
+</div>
 <img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" />
 </div>
  <br>
@@ -39,7 +47,7 @@
    <p>{{ tutorial.shortdesc }}</p>
 </div>
 
-       <div class="read-title"><a href="{% url 'readarticle' tutorial.pk %}"  >READ MORE..</a></div>
+       <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'readarticle' tutorial.pk %}"  >READ MORE</a></div>
        <hr>
         <div>
                     <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
@@ -73,12 +81,17 @@
   </div>
     <div>
       <br>
-      <a href="{% url 'author_info' %}">{{ author_info.blogger}}</a>
-      <p>{{author_info.strong}}</p>  <hr>
+      <!-- <ul class="content-post">
+         <i class="fa fa-user" href="{% url 'author_info' %}" rel="author" ></i> {{author_info.blogger}}
+            </a>
+          </li>
+
+        </ul> -->
+   <p>Title: {{author_info.strong}}</p>  <hr>
       <p>{{author_info.about_author}}</p>
 </div>
 
- <div class="read-title"><a href="{% url 'author_info' %}">READ MORE..</a></div>
+ <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'author_info' %}">READ MORE</a></div>
 <hr>
 
   <div>

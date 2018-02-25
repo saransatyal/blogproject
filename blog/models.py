@@ -45,9 +45,9 @@ class Author(models.Model):
     strong = models.CharField(max_length=40)
     document = models.FileField(null=True,upload_to='documents/')
     about_author = models.TextField(max_length=4000 , null=True)
-    description = models.TextField(null=True)
-    def get_description_as_markdown(self):
-        return mark_safe(markdown(self.description, safe_mode='esscape'))
+    descriptions = models.TextField(null=True)
+    def get_descriptions_as_markdown(self):
+        return mark_safe(markdown(self.descriptions, safe_mode='esscape'))
 
 class Commentblog(models.Model):
     message = models.TextField(max_length=4000)
@@ -63,6 +63,7 @@ class Mythought(models.Model):
     image = models.FileField(upload_to='documents/')
     description = models.TextField(max_length=4000)
     thought_on =   models.DateTimeField()
+    # views = models.PositiveIntegerField(default=0)
 
     def get_description_as_markdown(self):
         return mark_safe(markdown(self.description, safe_mode='essscape'))

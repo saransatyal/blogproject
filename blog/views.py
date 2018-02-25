@@ -10,6 +10,11 @@ from django.db.models import Count
 # hello world model
 def base(request):
     return render(request,'base.html')
+def archive(request):
+    author_info = Author.objects.all()
+    tutorials = Article.objects.all().order_by('-created_at')
+    return render(request,'archive.html',{'author_info':author_info, 'tutorials':tutorials})
+
 def author_info(request):
     author_info = Author.objects.all()
     return render(request, 'author_info.html',{'author_info':author_info})

@@ -3,7 +3,7 @@ from blog.models import Article , Readarticle, Commentblog , Author , Mythought
 from django.utils.html import mark_safe
 from markdown import markdown
 
-from .forms import PostForm
+
 from blog.models import Readarticle
 
 # Registering Tutorial editor in admin
@@ -15,7 +15,7 @@ class Admin_Article(admin.ModelAdmin):
         obj.save()
 
 class Admin_Readarticle(admin.ModelAdmin):
-    form = PostForm
+     
     list_display = ('title', 'get_subject','written_by','written_at','get_document','get_views')
     def get_subject(self , obj):
         return obj.subject_other
